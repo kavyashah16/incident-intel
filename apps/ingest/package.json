@@ -1,0 +1,20 @@
+{
+  "name": "@ii/ingest",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/main.ts",
+    "start": "tsx src/main.ts",
+    "typecheck": "tsc -p tsconfig.json",
+    "test": "vitest run",
+    "dev:ingest": "pnpm --filter @ii/ingest dev"
+  },
+  "dependencies": {
+    "@ii/shared": "workspace:*",
+    "fastify": "^5.12.7",
+    "kafkajs": "^2.2.4",
+    "pg": "^8.23.1",
+    "prom-client": "^15.1.3"
+  }
+}

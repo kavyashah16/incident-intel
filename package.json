@@ -1,0 +1,28 @@
+{
+  "name": "incident-intel",
+  "private": true,
+  "version": "0.1.0",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "typecheck": "pnpm -r --workspace-concurrency=1 typecheck",
+    "test": "pnpm -r --workspace-concurrency=1 test",
+    "migrate": "tsx scripts/migrate.ts",
+    "seed": "tsx scripts/seed.ts",
+    "dev:ingest": "pnpm --filter @ii/ingest dev",
+    "infra:up": "docker compose -f infra/docker-compose.yml up -d",
+    "infra:down": "docker compose -f infra/docker-compose.yml down"
+  },
+  "devDependencies": {
+    "@types/node": "22",
+    "@types/pg": "8",
+    "tsx": "4",
+    "typescript": "5",
+    "vitest": "2"
+  },
+  "dependencies": {
+    "kafkajs": "^2.2.4",
+    "pg": "^8.23.1"
+  }
+}
