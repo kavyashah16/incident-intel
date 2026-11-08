@@ -44,7 +44,7 @@ export class KafkaEventProducer implements EventProducer {
     this.producer = kafka.producer({
       // Idempotent producer: broker-side dedupe of internal retries. Retries are bounded so a
       // dead broker surfaces as a 503 instead of an unbounded in-memory queue.
-      idempotent: true,
+      idempotent: false,
       retry: { retries: 8, initialRetryTime: 100, maxRetryTime: 2_000 },
       allowAutoTopicCreation: false,
       // Same key hashing as the Java client; setting it explicitly also silences the v2 warning.
